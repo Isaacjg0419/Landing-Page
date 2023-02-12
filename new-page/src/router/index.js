@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import SideBar from '@/components/SideBar.vue'
 import { Swipe, SwipeItem } from 'mint-ui';
 
 Vue.component(Swipe.name, Swipe);
@@ -13,6 +14,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/sidebar',
+    name: 'SideBar',
+    component: SideBar
   },
   // {
   //   path: '/about',

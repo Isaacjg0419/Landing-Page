@@ -1,33 +1,52 @@
 <template>
     <div>
         <div class="home h-100" style="min-height: 100vh;width: 100vw;">
+            <div v-if='this.showSideBar'>
+                <sidebar @closeSidebarEvent="closeSidebar"  SideBar='sidebar'></sidebar>
+            </div>
             <div class="container  " style="padding:0px 20px 0px 20px">
                 <div class="wrapper ">
                     <div class="header" style="padding-top: 10px;">
-                        <div class="row" style="width:100%">
-                            <div class="col-5 text-start">
-                                <div class="img">
-                                    <img style="height:8vh;width: 10vw;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
+                        <div v-if="this.$isMobile()">
+                            <div class="row">
+                                <div class="col-auto text-start">
+                                    <div class="img">
+                                        <img style="height:8vh;width: 10vw;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
+                                    </div>
+                                </div>
+                                <div class="col text-end">
+                                    <svg t="1676176807086" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2682" width="64" height="64" @click='showSide'>
+                                        <path d="M117.418667 768h789.333333a32 32 0 0 1 4.352 63.701333l-4.352 0.298667h-789.333333a32 32 0 0 1-4.309334-63.701333L117.418667 768h789.333333-789.333333z m0-277.205333h789.333333a32 32 0 0 1 4.352 63.701333l-4.352 0.298667h-789.333333a32 32 0 0 1-4.309334-63.701334l4.309334-0.298666h789.333333-789.333333z m0-277.333334h789.333333a32 32 0 0 1 4.309333 63.701334l-4.352 0.298666h-789.333333A32 32 0 0 1 113.066667 213.76l4.309333-0.298667h789.333333-789.333333z" fill="#8176ff" p-id="2683"></path>
+                                    </svg>
                                 </div>
                             </div>
-                            <div class="col-7 text-end  mb-auto">
-                                <div class="row">
-                                    <div class="col-8 text-center">
-                                        <div class="navigation" style="height:100%">
-                                            <div class="row " style="height:100%">
-                                                <div class="col-auto mx-auto my-auto" style="color:#8176ff">HOME</div>
-                                                <div class="col-auto mx-auto my-auto">ABOUT US</div>
-                                                <div class="col-auto mx-auto my-auto">SERVICE</div>
-                                                <div class="col-auto mx-auto my-auto">PAGES</div>
-                                                <div class="col-auto mx-auto my-auto">CONTACT US</div>
+                        </div>
+                        <div v-else>
+                            <div class="row" style="width:100%">
+                                <div class="col-5 text-start">
+                                    <div class="img">
+                                        <img style="height:8vh;width: 10vw;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
+                                    </div>
+                                </div>
+                                <div class="col-7 text-end  mb-auto">
+                                    <div class="row">
+                                        <div class="col-8 text-center">
+                                            <div class="navigation" style="height:100%">
+                                                <div class="row " style="height:100%">
+                                                    <div class="col-auto mx-auto my-auto" style="color:#8176ff">HOME</div>
+                                                    <div class="col-auto mx-auto my-auto">ABOUT US</div>
+                                                    <div class="col-auto mx-auto my-auto">SERVICE</div>
+                                                    <div class="col-auto mx-auto my-auto">PAGES</div>
+                                                    <div class="col-auto mx-auto my-auto">CONTACT US</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-4 text-end">
-                                        <div class="GetStart" style="padding:0px">
-                                            <div class="row">
-                                                <div class="col" style="height: 100%;width: 100%;">
-                                                    <button style="background: #8176FF;height: 100%;width: 100%;padding: 20px 30px ; border: 0px;border-radius: 50px;color: white;">GET STARTED</button>
+                                        <div class="col-4 text-end">
+                                            <div class="GetStart" style="padding:0px">
+                                                <div class="row">
+                                                    <div class="col" style="height: 100%;width: 100%;">
+                                                        <button style="background: #8176FF;height: 100%;width: 100%;padding: 20px 30px ; border: 0px;border-radius: 50px;color: white;">GET STARTED</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,7 +213,7 @@
                                                         <div class="description1" id="1">
                                                             <div class="subtitle" id="1" style="margin: 10px,0px,10px,0px;">6th</div>
                                                             <div class="text" id="1">
-                                                               Increased Sales: QR codes can increase sales by allowing merchants to receive payments from customers on the spot, without the need for time-consuming and error-prone manual processes.  ***
+                                                                Increased Sales: QR codes can increase sales by allowing merchants to receive payments from customers on the spot, without the need for time-consuming and error-prone manual processes. ***
                                                             </div>
                                                         </div>
                                                     </div>
@@ -633,6 +652,7 @@
 <script>
     // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import sidebar from '@/components/SideBar.vue'
 import Swiper, {Autoplay } from 'swiper'
 import 'swiper/css'
 
@@ -654,6 +674,7 @@ export default  {
     components: {
         HelloWorld,
          Swiper,
+         sidebar,
       
     },
     data(){
@@ -665,6 +686,8 @@ export default  {
           {"image":"https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/marketchat-logo@2x.png"},
           {"image":"https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/starbank-logo@2x.png"},
           ],
+        showSideBar:false,
+       
 
       
 
@@ -672,6 +695,10 @@ export default  {
 
       }
     },
+    created() {
+    // Use in js
+    console.log(this.$isMobile());
+  },
   
     mounted(){
       new Swiper(this.$refs.swiper, {
@@ -698,6 +725,17 @@ export default  {
         el:'.swiper-autoplay',
       }
     })
+    },
+    methods:{
+        showSide(){
+            this.showSideBar=true;
+            console.log(this.showSideBar)
+
+        },
+        closeSidebar() {
+            this.showSideBar = false
+        }
+       
     }
     
 }
