@@ -8,7 +8,7 @@
                     <div class="col">
                         <div class="row" style="width:100%">
                             <div class="col-auto text-start" style="padding:10px 20px">
-                                <img style="height:10vh;width: 10vw;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
+                                <img style="height:auto;width: 138px;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
                             </div>
                             <div class="col text-end my-auto">
                                 <button class='close' @click='close' style="border:none;background-color: black;color: white;">X</button>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="row">
                             <div class="col" style="padding:15px 30px;">
-                                Service
+                                SERVICES
                             </div>
                         </div>
                         <div class="row">

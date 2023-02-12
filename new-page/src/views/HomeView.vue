@@ -11,7 +11,7 @@
                             <div class="row">
                                 <div class="col-auto text-start">
                                     <div class="img">
-                                        <img style="height:8vh;width: 10vw;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
+                                        <img style="height:auto;width: 138px;" src="https://templatekit.jegtheme.com/izpay/wp-content/uploads/sites/30/2020/12/logo-new@2x.png">
                                     </div>
                                 </div>
                                 <div class="col text-end">
